@@ -1,24 +1,21 @@
-# README
+# Volunteer Manager
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An app in rails for volunteers to manage volunteers and tasks for each project. Volunteer manager provides volunteer groups with a CRUD interface for any type of task that is to be completed on a project.
 
-Things you may want to cover:
+## Installation/Development
+Use Ruby 2.3.3 and Rails 5.2.2. To begin developing with Volunteer Manager, fork and clone this repo, then run:
 
-* Ruby version
+    $ bundle install
+    $ rake db:migrate
 
-* System dependencies
+To run your own local development server, run
 
-* Configuration
+    $ rails s
 
-* Database creation
+## Contributing
 
-* Database initialization
+Contributions are welcome via pull requests and issues. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-* How to run the test suite
+## License
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
