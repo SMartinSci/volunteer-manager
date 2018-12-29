@@ -6,6 +6,7 @@ class Project < ApplicationRecord
     validates :description, presence: true
 
     has_many :roles
-    has_many :tasks 
     has_many :users, through: :roles
+    has_many :tasks
+    has_many :tasks, through: :roles
 end
