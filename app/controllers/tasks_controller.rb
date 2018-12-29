@@ -8,14 +8,12 @@ class TasksController < ApplicationController
   
     def new
       @task = Task.new
-  
     end
   
     def show
       if current_user
         @role = current_user.roles.build(task: @task)
       end
-     
     end
   
     def create
@@ -53,7 +51,6 @@ class TasksController < ApplicationController
   
     def set_task
       @task = Task.find_by_id(params[:id])
-  
     end
   
     def task_params
