@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :roles do
         resources :tasks
     end
+  end
 
     get '/login' => 'sessions#new'
     post '/login' => 'sessions#create'
