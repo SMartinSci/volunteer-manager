@@ -5,8 +5,6 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.string :location
       t.text :description
       t.datetime :date
-      t.integer :role_id
-      t.integer :user_id
       t.datetime :time
       t.datetime :created_at, null: false
       t.datetime :updated_at, null: false

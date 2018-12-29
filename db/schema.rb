@@ -17,8 +17,6 @@ ActiveRecord::Schema.define(version: 2018_12_25_131650) do
     t.string "location"
     t.text "description"
     t.datetime "date"
-    t.integer "role_id"
-    t.integer "user_id"
     t.datetime "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -43,8 +41,6 @@ ActiveRecord::Schema.define(version: 2018_12_25_131650) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.integer "project_id"
-    t.integer "role_id"
   end
 
 end
