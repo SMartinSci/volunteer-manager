@@ -7,6 +7,7 @@ class ProjectsController < ApplicationController
     end 
 
     def show  
+        @project = Project.find(params[:id])
     end 
 
     def new
@@ -14,8 +15,7 @@ class ProjectsController < ApplicationController
     end 
 
     def create 
-        @user = User.find(params[:user_id])
-        @project = @user.projects.build(project_params)
+        @project = Project.new(project_params)
         if @project.save
             flash[:message] = "Project created!"
             redirect_to project_path(@project)
