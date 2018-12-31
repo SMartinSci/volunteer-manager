@@ -1,0 +1,5 @@
+<h1>All Tasks</h1>
+<% @tasks.each do |task| %>
+    <h2>Task Name: <%= link_to task.name, task_path(task), class:'name' %></h2><br><br>
+    <h3>Posted by: <%= link_to task.user.name, user_path(task.user) %></h3>
+<% end %>

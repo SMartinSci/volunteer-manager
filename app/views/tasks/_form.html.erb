@@ -1,0 +1,26 @@
+<%= form_for [@role, @task] do |f| %>
+    <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+    </div>
+    <div class="field">
+        <%= f.label :description %><br>
+        <%= f.text_field :description %>
+    </div>
+    <% end %><br><br>
+
+    <%= f.hidden_field :role_id, :value => params[:role_id]%><br>  
+    <%= f.submit "Create Task", class:"submit" %>
+
+<% end %>
+
+<% if @task.errors.any? %>
+        <div class="alert alert-danger" role="alert">
+            <p> Error: </p>
+            <ul>
+                <% @task.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+<% end %>
