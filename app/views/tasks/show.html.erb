@@ -1,0 +1,4 @@
+<h2>Task Name: <%= @task.name %></h2>
+<h3>Role Name: <%= link_to @task.role.name, role_path(@task.role) %></h3>
+
+<%= render 'form' %>
