@@ -1,0 +1,15 @@
+<h1> <%= @user.name %>'s Projects are below: </h1>
+
+<% if @user == current_user %>
+ <h2> You have volunteered with <%= "#{@user.projects.size}"%> project(s)</h2>
+<% end %>
+</br>
+<% @user.projects.each do |project| %>
+    <h2>Project Name: <%= link_to project.name, project_path(project), class:'name' %></h2>
+    <h3> Project location: <%= project.location %></h3>
+    <h3> Project date: <%= project.date %></h3>
+<% end %>
+</br>
+<% if @user == current_user %>
+<h3><%= link_to "Add a Project", new_user_project_path(@user) %></h3>
+<% end %>
