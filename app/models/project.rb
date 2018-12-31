@@ -9,4 +9,6 @@ class Project < ApplicationRecord
     has_many :users, through: :roles
     has_many :tasks
     has_many :tasks, through: :roles
+
+    scope :this_year, -> { where(:created_at => Time.now.beginning_of_year..Time.now.end_of_year) }
 end
