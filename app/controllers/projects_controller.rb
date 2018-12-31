@@ -37,6 +37,7 @@ class ProjectsController < ApplicationController
             redirect_to project_path(@project)
         else
             render :edit
+        end
     end
     
     def destroy

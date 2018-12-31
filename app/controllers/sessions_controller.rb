@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id
             
             if logged_in?
-                flash[:msg] = "Successfully authenticated via Google!"
+                flash[:msg] = "Successfully authenticated via Facebook!"
             else
                 flash[:msg] = "Something went wrong. Try again."
             end
