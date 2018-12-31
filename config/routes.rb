@@ -8,6 +8,10 @@ Rails.application.routes.draw do
         resources :tasks
     end
   end
+
+  resources :roles, only: [:index]
+  resources :projects, only: [:index]
+  resources :tasks, only: [:index, :create] 
   
     get '/signup' => 'users#new'
     post '/signup' => 'users#create'
