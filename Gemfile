@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
  gem 'omniauth'
  gem 'thin'
  gem 'dotenv-rails'
-gem "omniauth-google-oauth2", "~> 0.2.1"
+gem "omniauth-facebook"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
