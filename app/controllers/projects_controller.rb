@@ -21,7 +21,7 @@ class ProjectsController < ApplicationController
     def create 
         @project = Project.new(project_params)
         if @project.save
-            flash[:message] = "Project created!"
+            flash[:msg] = "Project created!"
             redirect_to project_path(@project)
         else
             render :new 
@@ -33,7 +33,7 @@ class ProjectsController < ApplicationController
 
     def update
         if @project.update(project_params)
-            flash[:message] = "Project successfully updated!"
+            flash[:msg] = "Project successfully updated!"
             redirect_to project_path(@project)
         else
             render :edit
@@ -42,7 +42,7 @@ class ProjectsController < ApplicationController
     def destroy
         @project = current_user.projects.find(params[:id])
         @project.destroy
-        flash[:message] = "Project deleted!"
+        flash[:msg] = "Project deleted!"
         redirect_to projects_path
     end 
 

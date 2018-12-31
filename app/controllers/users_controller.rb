@@ -13,7 +13,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             session[:user_id] = @user.id
-            flash[:message] = "Successfully Signed Up!"
+            flash[:msg] = "Successfully Signed Up!"
             redirect_to projects_path
         else
             render :new

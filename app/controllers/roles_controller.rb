@@ -31,7 +31,7 @@ class RolesController < ApplicationController
     def update
         @role = current_user.roles.find(params[:id])
         if @role.update(role_params)
-        flash[:message] = "Role updated."
+        flash[:msg] = "Role updated."
             redirect_to role_path(@role)
         else
             render :edit
@@ -41,7 +41,7 @@ class RolesController < ApplicationController
     def destroy
         @role = current_user.roles.find(params[:id])
             @role.destroy
-            flash[:message] = "Role deleted!"
+            flash[:msg] = "Role deleted!"
             redirect_to roles_path
         end
     end
