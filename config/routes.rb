@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :roles, only: [:index]
+  resources :roles, only: [:index, :edit]
   resources :projects, only: [:index]
   resources :tasks, only: [:index, :create] 
   
