@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
     end 
 
     def create 
-        @project = Project.new(project_params)
+        @project = Project.new(project_params)  
         if @project.save
             flash[:msg] = "Project created!"
             redirect_to project_path(@project)

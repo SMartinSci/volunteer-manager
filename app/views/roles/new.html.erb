@@ -1,6 +1,6 @@
 <h1>Add a new role</h1>
 
-<%= form_for [current_user, @park] do |f| %>
+<%= form_for [@project, @role] do |f| %>
     <div class="field">
         <%= f.label :name %><br>
         <%= f.text_field :name %>

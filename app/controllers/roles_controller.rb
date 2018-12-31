@@ -15,10 +15,11 @@ class RolesController < ApplicationController
     end
 
     def create
-        @user = User.find(params[:user_id])
-        @role = Role.create(role_params)
+        @user = User.find(params[:role][:user_id])
+        @role = @user.roles.new(role_params)
         if @role.save
-            redirect_to role_path(@role)
+            flash[:msg] = "Role created!"
+            redirect_to role_path(@role.id)
         else
             render :new
         end

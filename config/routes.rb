@@ -3,11 +3,15 @@ Rails.application.routes.draw do
     root to: 'welcome#index'
     
     resources :users
-    resources :projects do
-      resources :roles do
-        resources :tasks
+      shallow do
+        resources :projects do
+          shallow do
+          resources :roles do
+            resources :tasks
+      end
     end
   end
+end
 
   resources :roles, only: [:index, :edit]
   resources :projects, only: [:index]

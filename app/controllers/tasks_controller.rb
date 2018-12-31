@@ -19,7 +19,6 @@ class TasksController < ApplicationController
     def create
       @role = Role.find(params[:task][:role_id])  
       @task = @role.tasks.new(task_params)
-      
       if @task.save
         flash[:msg] = "Task created!"
         redirect_to task_path(@task.id)
