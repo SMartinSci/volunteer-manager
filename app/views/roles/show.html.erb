@@ -2,8 +2,11 @@
 <h2> Role Name: <%= @role.name %></h5><br>
 
     <% @role.tasks.each do |task|%></>
-    <h3> <%= link_to task.name, task_path(task) %></h3>
+    <h3><%= link_to task.name, task_path(task) %></h3>
     <% end %>
+
+    <h5>Created at: <%= @role.created_at.strftime('%A, %b %d, %Y') %></h5>
+    <h5>Updated at: <%= @role.updated_at.strftime('%A, %b %d, %Y') %></h5>
 
     <h4 id="role-links"><% if current_user.roles.include?(@role) %>
         <%= link_to "Edit Role", edit_role_path(@role), class: "edit-link" %><br></br>

@@ -1,3 +1,6 @@
 <h3>Role Name: <%= link_to @task.role.name, role_path(@task.role) %></h3>
+    <h5>Created at: <%= @task.created_at.strftime('%A, %b %d, %Y') %></h5>
+    <h5>Updated at: <%= @task.updated_at.strftime('%A, %b %d, %Y') %></h5>
+
 
 <%= render 'form' %>

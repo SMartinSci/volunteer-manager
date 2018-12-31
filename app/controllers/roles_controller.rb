@@ -43,7 +43,6 @@ class RolesController < ApplicationController
             @role.destroy
             flash[:msg] = "Role deleted!"
             redirect_to roles_path
-        end
     end
 
     private
