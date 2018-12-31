@@ -10,6 +10,22 @@
   </head>
 
   <body>
+    <% if current_user %>
+      <li><%= link_to "Welcome, #{current_user.name}!", user_path(current_user) %></li>
+      <li><%= link_to "Projects", projects_path%> </li>
+      <li><%= link_to "Roles", roles_path%> </li>
+      <li><%= link_to "Tasks", tasks_path%></li>
+      <li><%= link_to "Log In", login_path%></li>
+      <li><%= link_to "Log Out", logout_path%></li>
+    <% end %>
+
+    <% if flash[:notice] %>
+      <div class="alert alert-danger" role="alert"><%= flash[:notice] %></div>
+        <% end %>
+
+    <% if flash[:msg] %>
+      <div class="alert alert-success" role="alert"><%= flash[:msg] %></div>
+        <% end %>
     <%= yield %>
   </body>
 </html>
