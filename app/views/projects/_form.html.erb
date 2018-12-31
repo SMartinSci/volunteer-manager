@@ -1,0 +1,35 @@
+<%= form_for [@project] do |f| %>
+    <div class="field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+    </div>
+    <div class="field">
+        <%= f.label :description %><br>
+        <%= f.text_field :description %>
+    </div>
+    <div class="field">
+        <%= f.label :date %><br>
+        <%= f.date_field :date %>
+    </div>
+    <div class="field">
+        <%= f.label :location %><br>
+        <%= f.text_field :location %>
+    </div>
+     <div class="field">
+        <%= f.label :time %><br>
+        <%= f.integer_field :time %>
+    </div>
+    <% end %><br><br>
+    <%= f.submit "Create Project", class:"submit" %>
+<% end %>
+
+<% if @project.errors.any? %>
+        <div class="alert alert-danger" role="alert">
+            <p> Error: </p>
+            <ul>
+                <% @project.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+<% end %>

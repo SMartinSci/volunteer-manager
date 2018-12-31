@@ -1,0 +1,10 @@
+    <h2>Project Name: <%= @project.name %></h2>
+    <h4>Project Date:<%= @project.date.strftime('%B, %d %Y') %></h4>
+
+    <h4 id="project-links"><% if current_user.projects.include?(@project) %>
+        <%= link_to "Edit project", edit_project_path(@project), class: "edit-link" %>&nbsp;&nbsp;&nbsp;
+        <%= link_to "Delete project", project_path(@project), :confirm => "Are you sure?", :method => :delete, class: "delete-link"%>
+    <% end %></h4>
+
+    <h5>Created at: <%=project.created_at.strftime('%A, %b %d, %Y')%> </h5>
+    <h5>Updated at: <%=project.updated_at.strftime('%A, %b %d, %Y')%> </h5>
