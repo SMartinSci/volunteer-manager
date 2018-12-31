@@ -19,6 +19,13 @@ class SessionsController < ApplicationController
         if auth = request.env["omniauth.auth"]
             @user = User.find_or_create_by_omniauth(auth)
             session[:user_id] = @user.id
+            
+            if logged_in?
+                flash[:msg] = "Successfully authenticated via Google!"
+            else
+                flash[:msg] = "Something went wrong. Try again."
+            end
+
             redirect_to user_path(@user)
         else
             render :new
