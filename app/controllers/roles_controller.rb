@@ -2,7 +2,6 @@ class RolesController < ApplicationController
     
     before_action :logged_in?, only: [:index, :edit, :update, :destroy]
     before_action :set_role, only: [:show, :edit, :update, :destroy]
-    before_action :validate_user
 
     def index
         @roles = Role.all
