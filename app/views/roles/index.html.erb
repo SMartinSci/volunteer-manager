@@ -1,11 +1,13 @@
 <h1>All Roles</h1>
 
 <% @roles.each do |role| %>
-    <%# <h2>Role Name: <%= link_to role.name, role_path(role), class:'name' %></h2><br><br> %>
+    <%# <h2>Role Name: <%= link_to role.name, role_path(role), class:'name' %></h2><br><br> 
     <p>Posted by: <%= link_to role.user.name, user_path(role.user) %> </p>
 
 <% end %>
 
-    <%= link_to "Edit Role", edit_role_path(@role), class: "edit-link" %>
-    <%= link_to "Delete Role", role_path(@role), method: :delete %> 
+    <%= link_to "Edit Role", edit_roles_path(@role), class: "edit-link" %> 
+    <%# <%= link_to "Delete Role", role_path(@role), method: :delete %>  
+
+   
 
