@@ -8,19 +8,18 @@ Rails.application.routes.draw do
     #       shallow do
     #       resources :roles do
     #         resources :tasks
-
-    resources :users, :shallow => true do
-      resources :projects
+    resources :roles, :shallow => true do
+      resources :tasks
     end
 
     resources :projects, :shallow => true do
       resources :roles 
     end
-          
-    resources :roles, :shallow => true do
-      resources :tasks
-    end
 
+    resources :users, :shallow => true do
+      resources :roles 
+    end
+          
     get 'projects/this_year' => 'projects#this_year'
 
   resources :roles, only: [:show, :new, :create, :edit, :update, :destroy]
