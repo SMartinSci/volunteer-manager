@@ -21,6 +21,8 @@ Rails.application.routes.draw do
       resources :tasks
     end
 
+    get 'projects/this_year' => 'projects#this_year'
+
   resources :roles, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :projects, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :tasks, only: [:show, :new, :create, :edit, :update, :destroy]
