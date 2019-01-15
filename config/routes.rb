@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     #       shallow do
     #       resources :roles do
     #         resources :tasks
+
+  get 'projects/this_year' => 'projects#this_year'
+
     resources :roles, :shallow => true do
       resources :tasks
     end
@@ -30,7 +33,7 @@ Rails.application.routes.draw do
     get '/login' => 'sessions#new'
     post '/login' => 'sessions#create'
     get '/logout'  => 'sessions#destroy'
-    get 'projects/this_year' => 'projects#this_year'
+    
 
     get '/auth/facebook/callback' => 'sessions#facebook'
 

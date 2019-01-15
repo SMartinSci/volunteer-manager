@@ -1,2 +1,7 @@
-<h2>Project Name: <%= @project.name %></h2>
-<%= render 'form' %>
+<h2>Project Name: </h2>
+
+ <% @projects.each do |project| %>
+<h2>Project Year <%= link_to project.name, project_path(project), class:'name' %></h2><br><br>
+<% end %>
+
+<%# <%= render 'form' %> 
