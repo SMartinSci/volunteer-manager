@@ -2,20 +2,29 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     root to: 'welcome#index'
     
-    resources :users
-      shallow do
-        resources :projects do
-          shallow do
-          resources :roles do
-            resources :tasks
-      end
-    end
-  end
-end
+    # resources :users do
+    #   shallow do
+    #     resources :projects do
+    #       shallow do
+    #       resources :roles do
+    #         resources :tasks
 
-  resources :roles, only: [:index, :edit]
-  resources :projects, only: [:index]
-  resources :tasks, only: [:index, :create] 
+    resources :users, :shallow => true do
+      resources :projects
+    end
+
+    resources :projects, :shallow => true do
+      resources :roles 
+    end
+          
+    resources :roles, :shallow => true do
+      resources :tasks
+    end
+
+  resources :roles, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :projects, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :tasks, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :users, only: [:show]
   
     get '/signup' => 'users#new'
     post '/signup' => 'users#create'
