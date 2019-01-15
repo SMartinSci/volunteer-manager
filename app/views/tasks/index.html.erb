@@ -1,4 +1,7 @@
 <h1>All Tasks</h1>
 <% @tasks.each do |task| %>
-    <h3>Posted by: <%= link_to task.user.name, user_path(task.user) %></h3>
+    <h3>Associated Role: <%= link_to task.role.name, role_path(task.role) %></h3>
+    <h3>Posted by: <%= link_to task.role.user.name, role_path(task.role) %></h3>
 <% end %>
+
+

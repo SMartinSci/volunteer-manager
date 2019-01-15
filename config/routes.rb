@@ -19,8 +19,6 @@ Rails.application.routes.draw do
     resources :users, :shallow => true do
       resources :roles 
     end
-          
-    get 'projects/this_year' => 'projects#this_year'
 
   resources :roles, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :projects, only: [:show, :new, :create, :edit, :update, :destroy]
@@ -31,7 +29,8 @@ Rails.application.routes.draw do
     post '/signup' => 'users#create'
     get '/login' => 'sessions#new'
     post '/login' => 'sessions#create'
-    delete '/logout'  => 'sessions#destroy'
+    get '/logout'  => 'sessions#destroy'
+    get 'projects/this_year' => 'projects#this_year'
 
     get '/auth/facebook/callback' => 'sessions#facebook'
 
