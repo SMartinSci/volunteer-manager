@@ -22,8 +22,15 @@
       <li><%= link_to "Log Out", logout_path%></li>
     <% end %>
 
-    <%= link_to "Sign Up Devise", new_user_registration_path %> 
-    <%= link_to "Log In Devise", new_user_session_path %> 
+  <ul class="nav navbar-nav navbar-right">
+    <% if user_signed_in? %>
+    <li><%= link_to current_user.email, edit_user_registration_path %></li>
+      <li><%= link_to "Logout", destory_user_session_path, method: :delete %></li>
+    <% else %>
+      <li><%= link_to "Sign Up Devise", new_user_registration_path %></li> 
+      <li><%= link_to "Log In Devise", new_user_session_path %></li> 
+    <% end %>
+  </ul>
 
     <% if flash[:notice] %>
       <div class="alert alert-danger" role="alert"><%= flash[:notice] %></div>
