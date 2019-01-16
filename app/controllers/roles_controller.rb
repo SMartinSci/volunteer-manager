@@ -16,10 +16,10 @@ class RolesController < ApplicationController
 
     def create
         @user = User.find(params[:role][:user_id])
-        @role = @user.roles.new(role_params)
+        @role = @user.roles.build(role_params)
         if @role.save
             flash[:msg] = "Role created!"
-            redirect_to role_path(@role.id)
+            redirect_to role_path(@role)
         else
             render :new
         end
@@ -52,7 +52,7 @@ class RolesController < ApplicationController
         @role = Role.find_by(id: params[:id]) 
     end
 
-    def roles_params
+    def role_params
         params.require(:role).permit(:user_id, :project_id, :name)
     end
 end
