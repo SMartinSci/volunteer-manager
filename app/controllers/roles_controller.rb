@@ -15,8 +15,8 @@ class RolesController < ApplicationController
     end
 
     def create
-        @user = User.find(params[:role][:user_id])
-        @role = @user.roles.build(role_params)
+        @project = Project.find(params[:role][:project_id])
+        @role = @project.roles.build(role_params)
         if @role.save
             flash[:msg] = "Role created!"
             redirect_to role_path(@role)
@@ -40,10 +40,9 @@ class RolesController < ApplicationController
     end
 
     def destroy
-        @role = current_user.roles.find(params[:id])
-            @role.destroy
-            flash[:msg] = "Role deleted!"
-            redirect_to roles_path
+        @role.destroy
+        flash[:msg] = "Role deleted!"
+        redirect_to roles_path
     end
 
     private

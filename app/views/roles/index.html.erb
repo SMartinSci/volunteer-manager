@@ -4,7 +4,7 @@
     <h2>Role: <%= link_to role.name, role_path(role), class:'name' %></h2><br><br> 
     <p>Posted by: <%= link_to role.user.name, user_path(role.user) %> </p>
 
-    <%= link_to "Add Role", new_role_path(role) %> 
+    <%= link_to "Add Role", new_project_role_path(role) %> 
     <%= link_to "Edit Role", edit_role_path(role), class: "edit-link" %> 
     <%= link_to "Delete Role", role_path(role), method: :delete %>  
 
