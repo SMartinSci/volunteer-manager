@@ -1,9 +1,12 @@
-<h1><%= @role.user.name %>'s Volunteer Roles</h1>
-<h2><%= @role.project.name %> Project</h2>
-<h2> Role Name: <%= @role.name %></h5><br>
+<h1><%= @role.user.name %>'s Roles</h1>
+<h2><%= @role.project.name %> Project </h2>
+<h2> Role Name: <%= @role.name %></h2><br>
 
-        <%= link_to "Edit Role", edit_role_path(@role), class: "edit-link" %><br></br>
-        <%= link_to "Delete Role", role_path(@role), :confirm => "Are you sure?", :method => :delete, class: "delete-link"%></br></br>
-         <%= link_to "All tasks", role_tasks_path(@role) %><br></br>
-        <%= link_to "Add new tasks", new_role_task_path(@role) %><br></br>
+
+<% if current_user.roles.include?(@role) %>
+    <%= link_to "Edit Role", edit_role_path(@role), class: "edit-link" %><br></br>
+    <%= link_to "Delete Role", role_path(@role), :confirm => "Are you sure?", :method => :delete, class: "delete-link"%></br></br>
+    <%= link_to "All tasks", role_tasks_path(@role) %><br></br>
+    <%= link_to "Add new tasks", new_role_task_path(@role) %><br></br>
+<% end %>
      
