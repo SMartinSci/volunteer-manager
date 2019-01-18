@@ -12,6 +12,7 @@ class ProjectsController < ApplicationController
 
     def show  
         @project = Project.find(params[:id])
+        @roles = @project.roles
     end 
 
     def new

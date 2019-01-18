@@ -4,6 +4,7 @@
     <h4>Time: <%= @project.time %></h4>
     <h4>Description: <%= @project.description %></h4>
 
+    <%= link_to "Add Roles", new_project_role_path(@project)%>
     <%= link_to "Edit Project", edit_project_path(@project)%>
     <%= link_to "Delete project", project_path(@project), method: :delete %>
   

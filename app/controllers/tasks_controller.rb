@@ -10,10 +10,7 @@ class TasksController < ApplicationController
       @task = Task.new
     end
   
-    def show
-      # if current_user
-      #   @role = Role.find_by(id: params[:id])
-      # end
+    def show    
     end
   
     def create
