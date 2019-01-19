@@ -3,7 +3,7 @@
     <h5>Created at: <%= @task.created_at.strftime('%A, %b %d, %Y') %></h5>
     <h5>Updated at: <%= @task.updated_at.strftime('%A, %b %d, %Y') %></h5>
 
-<% if current_user.tasks.include?(@task) %>
+<% if current_user.roles.include?(@task.role) %>
     <%= link_to "Add additional tasks", new_role_task_path(@task) %>
 <% end %>
 
