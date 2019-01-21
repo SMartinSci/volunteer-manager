@@ -23,12 +23,12 @@
 <% end %>
 
 <% if @project.errors.any? %>
-        <div class="alert alert-danger" role="alert">
-            <p> Error: </p>
-            <ul>
-            <% @project.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            </ul>
-            </div>
-            <% end %>
+    <div class="alert alert-danger" role="alert">
+        <p> Error: </p>
+        <ul>
+         <% @project.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        </ul>
+         </div>
+    <% end %>
 <% end %>

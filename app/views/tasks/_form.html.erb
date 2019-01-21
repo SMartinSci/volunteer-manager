@@ -11,12 +11,12 @@
 <% end %>
 
 <% if @task.errors.any? %>
-        <div class="alert alert-danger" role="alert">
-            <p> Error: </p>
-            <ul>
-                <% @task.errors.full_messages.each do |msg| %>
-                    <li><%= msg %></li>
-                <% end %>
-            </ul>
-        </div>
+    <div class="alert alert-danger" role="alert">
+        <p> Error: </p>
+        <ul>
+            <% @task.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
 <% end %>
