@@ -1,7 +1,7 @@
 class RolesController < ApplicationController
     
     before_action :logged_in?, only: [:index, :edit, :update, :destroy]
-    before_action :set_role, only: [:show, :index, :edit, :update, :destroy]
+    before_action :set_role, only: [:show, :index, :update, :destroy]
 
     def index
         @roles = Role.all
@@ -23,10 +23,6 @@ class RolesController < ApplicationController
         else
             render :new
         end
-    end
-
-    def edit
-        @role = Role.find(params[:id])
     end
 
     def update
