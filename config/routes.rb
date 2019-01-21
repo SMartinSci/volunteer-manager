@@ -23,9 +23,9 @@ Rails.application.routes.draw do
       resources :roles 
     end
 
-  resources :roles, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :roles, only: [:show, :new, :create, :update, :destroy]
   resources :projects, only: [:show, :new, :create, :edit, :update, :destroy]
-  resources :tasks, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :tasks, only: [:show, :new, :create, :update, :destroy]
   resources :users, only: [:show, :new, :create]
   
     get '/signup' => 'users#new'

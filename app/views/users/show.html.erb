@@ -1,7 +1,8 @@
 <h1> <%= @user.name %>'s Projects are below: </h1>
 
+
 <% if @user == current_user %>
- <h2> You have volunteered with <%= "#{@user.projects.size}"%> project(s)</h2>
+ <h2> You have <%= "#{@user.roles.size}"%> role(s)</h2>
 <% end %>
 </br>
 <% @user.projects.each do |project| %>

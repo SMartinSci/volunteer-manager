@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
     before_action :set_task, only: [:show, :edit, :update, :destroy]
-    before_action :logged_in?, only: [:index, :edit, :update, :destroy]
+    before_action :logged_in?, only: [:index, :update, :destroy]
 
     def index
       @tasks = Task.all
@@ -23,10 +23,7 @@ class TasksController < ApplicationController
         render :new
       end
     end
-  
-    def edit
-    end
-  
+
     def update
       @task.update(task_params)
       if @task.save
