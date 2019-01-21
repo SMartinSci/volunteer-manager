@@ -11,5 +11,5 @@
 <% if current_user.id == @project.id %>
     <%= link_to "Add Roles", new_project_role_path(@project)%>
     <%= link_to "Edit Project", edit_project_path(@project)%>
-    <%= link_to "Delete project", project_path(@project), method: :delete %>
+    <%# <%= link_to "Delete project", project_path(@project), method: :delete %> 
 <% end %>
