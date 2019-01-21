@@ -26,11 +26,11 @@ class RolesController < ApplicationController
     end
 
     def edit
-        # @role = Role.find(params[:id])
+        @role = Role.find(params[:id])
     end
 
     def update
-        @role = current_user.roles.find(params[:id])
+        @role = Role.find(params[:id])
         if @role.update(role_params)
         flash[:msg] = "Role updated."
             redirect_to role_path(@role)
