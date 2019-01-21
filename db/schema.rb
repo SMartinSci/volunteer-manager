@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2019_01_21_001150) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "provider"
+    t.string "uid"
   end
 
 end

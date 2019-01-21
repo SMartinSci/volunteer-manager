@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   resources :roles, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :projects, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :tasks, only: [:show, :new, :create, :edit, :update, :destroy]
-  resources :users, only: [:show]
+  resources :users, only: [:show, :new, :create]
   
     get '/signup' => 'users#new'
     post '/signup' => 'users#create'

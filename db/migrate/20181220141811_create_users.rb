@@ -6,6 +6,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.datetime :created_at, null: false
       t.datetime :updated_at, null: false
       t.string :name
+      t.string :provider
+      t.string :uid
     end
   end
 end
