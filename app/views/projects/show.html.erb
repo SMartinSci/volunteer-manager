@@ -1,7 +1,7 @@
     <h2>Project Name: <%= @project.name %></h2>
     <h4>Location: <%= @project.location %></h4>
     <h4>Date: <%= @project.date.strftime('%B %d, %Y') %></h4>
-    <h4>Time: <%= @project.time.strftime ('%H:%M %P')%></h4>
+    <h4>Time: <%= @project.time.strftime("%I:%M %p")%></h4>
     <h4>Description: <%= @project.description %></h4>
     <h5>Created at: <%= @project.created_at.strftime('%A %b %d, %Y') %></h5>
     <h5>Updated at: <%= @project.updated_at.strftime('%A %b %d, %Y') %></h5>
