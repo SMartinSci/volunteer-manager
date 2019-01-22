@@ -1,5 +1,6 @@
+<h2>Projects users created this year:</h2>
 <% @projects.each do |project| %>
-<h2>Projects this year: <%= link_to project.name, project_path(project), class:'name' %></h2><br><br>
+<%= link_to project.name, project_path(project), class:'name' %>
+<h4> Date: <%= project.date.strftime('%B %d, %Y') %></h4><br><br>
 <% end %>
-
 <%# <%= render 'form' need to add @project lin in this_year method of controller and feed it into render form here to make this work* %>
