@@ -8,6 +8,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.datetime :time
       t.datetime :created_at, null: false
       t.datetime :updated_at, null: false
+      t.integer :user_id
     end
   end
 end

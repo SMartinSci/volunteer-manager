@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
     has_many :roles
     has_many :projects, through: :roles
+    has_many :created_projects, class_name: "Project"
 
     def self.find_or_create_by_omniauth(auth)
         where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_01_21_001150) do
     t.datetime "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "roles", force: :cascade do |t|
