@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
     before_action :logged_in?, only: [:index, :edit, :update, :destroy]
-    before_action :set_project, only: [:show, :edit, :update, :destroy]
+    before_action :set_project, only: [:show, :create, :new, :edit, :update, :destroy]
     
     def index 
         @projects = Project.all 
@@ -18,11 +18,12 @@ class ProjectsController < ApplicationController
 
     def new
         @project = Project.new
+        @project.user_id = params[:user_id]
     end 
 
     def create 
-        @project = Project.new(project_params)  
-        if @project.save
+        @project = current_user.created_projects.build(project_params) 
+        if @project.save!
             flash[:msg] = "Project created!"
             redirect_to project_path(@project)
         else
@@ -55,6 +56,6 @@ class ProjectsController < ApplicationController
     end 
     
     def project_params
-        params.require(:project).permit(:name, :location, :description, :date, :time)
+        params.require(:project).permit(:name, :user_id, :location, :description, :date, :time)
     end
 end

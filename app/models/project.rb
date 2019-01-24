@@ -4,10 +4,10 @@ class Project < ApplicationRecord
     validates :location, presence: true
     validates :time, presence: true
     validates :description, presence: true
-
+    
+    belongs_to :user
     has_many :roles
     has_many :users, through: :roles
-    belongs_to :user
     has_many :tasks
     has_many :tasks, through: :roles
 

@@ -6,7 +6,7 @@
     <h5>Created at: <%= @project.created_at.strftime('%A %b %d, %Y') %></h5>
     <h5>Updated at: <%= @project.updated_at.strftime('%A %b %d, %Y') %></h5>
 
-<%# <% if current_user.projects.include?(@project) %> 
+<%# <% if current_user.id == @project.role.user.id %>
 <% if logged_in? %>
     <% if current_user.id == @project.user.id %>
     <%= link_to "Add Roles", new_project_role_path(@project)%>
