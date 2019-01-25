@@ -1,4 +1,4 @@
-<h1>All Roles</h1>
+<h1>All Community Roles</h1>
 
 <% @roles.each do |role| %>
     <h2>Role: <%= link_to role.name, role_path(role), class:'name' %></h2>
@@ -7,8 +7,4 @@
     <%= link_to "Add Role", new_project_role_path(role) %> 
     <%= link_to "Delete Role", role_path(role), method: :delete %>  
 <% end %>
-
-
-
-   
 

@@ -1,4 +1,4 @@
-<h1>All Tasks</h1>
+<h1>All Community Tasks</h1>
 <% @tasks.each do |task| %>
     <h3>Task: <%= task.description %></h3>
     <h4>Associated Role: <%= link_to task.role.name, role_path(task.role) %></h4>

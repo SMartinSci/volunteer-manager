@@ -15,7 +15,7 @@
     <h4>Project Name: <%= link_to project.name, project_path(project), class:'name' %></h4>
     <h4> Project location: <%= project.location %></h4>
     <h4> Project date: <%= project.date.strftime('%B %d, %Y') %></h4>
- <% end %>
+<% end %>
 </br>
 <% if @user == current_user %>
 <h3><%= link_to "Add a Project", new_project_path(@user) %></h3>

@@ -17,7 +17,8 @@ class ProjectsController < ApplicationController
     end 
 
     def new
-        project = Project.new
+        @project = Project.new
+       # @project.user_id = params[:user_id]
     end 
 
     def create 
@@ -34,7 +35,9 @@ class ProjectsController < ApplicationController
     end
 
     def update
-        if @project.update(project_params)
+        @project = current_user.created_projects.find(params[:id]) 
+        if 
+            @project.update(project_params)
             flash[:msg] = "Project successfully updated!"
             redirect_to project_path(@project)
         else

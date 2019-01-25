@@ -20,7 +20,7 @@
         <%= f.time_field :time %>
     </div>
 
-    <%= f.hidden_field :user_id, :value => params[:user_id]%>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.hidden_field :project_id, :value => params[:project_id]%>
     <%= f.submit "Submit", class:"submit" %>
 <% end %>
