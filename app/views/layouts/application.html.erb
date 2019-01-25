@@ -4,6 +4,9 @@
     <title>VolunteerManager</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+ </head>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -15,9 +18,10 @@
   
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  </head>
+ 
 
   <body>
+    <center>
      <% if current_user %>
      <%# <% if logged_in? %> 
       <li><%= link_to "Welcome, #{current_user.name}!", user_path(current_user) %></li>
@@ -39,6 +43,6 @@
       <div class="alert alert-success" role="alert"><%= flash[:msg] %></div>
         <% end %>
     <%= yield %>
-    
+    </center>
   </body>
 </html>

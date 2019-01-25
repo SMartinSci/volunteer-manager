@@ -1,16 +1,23 @@
-<h1> <%= @user.name %>'s Projects are below: </h1>
-
+<h2> <%= @user.name %>'s Roles are below: </h2>
 
 <% if @user == current_user %>
- <h2> You have <%= "#{@user.roles.size}"%> role(s)</h2>
+ <h3> You have <%= "#{@user.roles.size}"%> role(s)</h3>
 <% end %>
+
+<h3>Your Roles:</h3>
+<% @user.roles.each do |role| %>
+<h4> Role name: <%= role.name %></h4>
+<% end %>
+
 </br>
+<h3>Role-assigned Projects:</h3>
 <% @user.projects.each do |project| %>
-    <h2>Project Name: <%= link_to project.name, project_path(project), class:'name' %></h2>
-    <h3> Project location: <%= project.location %></h3>
-    <h3> Project date: <%= project.date %></h3>
-<% end %>
+    <h4>Project Name: <%= link_to project.name, project_path(project), class:'name' %></h4>
+    <h4> Project location: <%= project.location %></h4>
+    <h4> Project date: <%= project.date.strftime('%B %d, %Y') %></h4>
+ <% end %>
 </br>
 <% if @user == current_user %>
 <h3><%= link_to "Add a Project", new_project_path(@user) %></h3>
 <% end %>
+

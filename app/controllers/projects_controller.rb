@@ -17,8 +17,7 @@ class ProjectsController < ApplicationController
     end 
 
     def new
-        @project = Project.new
-        @project.user_id = params[:user_id]
+        project = Project.new
     end 
 
     def create 
