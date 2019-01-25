@@ -11,5 +11,10 @@ class Project < ApplicationRecord
     has_many :tasks
     has_many :tasks, through: :roles
 
-    scope :this_year, -> { where(:created_at => Time.now.beginning_of_year..Time.now.end_of_year) }
+    scope :this_year, -> { where(:date=> Time.now.beginning_of_year..Time.now.end_of_year) }
+
+    def self.next_project
+        order('created_at desc').first
+    end
+
 end

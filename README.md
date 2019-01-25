@@ -1,6 +1,6 @@
 # Volunteer Manager
 
-An app in rails for volunteers to manage volunteers and tasks for each project. Volunteer manager provides volunteer groups with a CRUD interface for any type of task that is to be completed on a project.
+An app in rails for volunteers to manage volunteer projects, roles, and tasks. Volunteer manager provides volunteer groups with a limited CRUD interface for any type of task that is to be completed on a project.
 
 ## Installation/Development
 Use Ruby 2.3.3 and Rails 5.2.2. To begin developing with Volunteer Manager, fork and clone this repo, then run:
@@ -8,7 +8,7 @@ Use Ruby 2.3.3 and Rails 5.2.2. To begin developing with Volunteer Manager, fork
     $ bundle install
     $ rake db:migrate
 
-To run your own local development server, run
+To run your own local development server, run:
 
     $ rails s
 

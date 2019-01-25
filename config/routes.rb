@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   get 'projects/this_year' => 'projects#this_year'
 
+  get 'projects/next_project' => 'projects#next_project'
+
+
     resources :roles, :shallow => true do
       resources :tasks
     end

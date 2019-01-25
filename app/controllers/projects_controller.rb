@@ -10,6 +10,11 @@ class ProjectsController < ApplicationController
         @projects = Project.this_year
     end
 
+
+    def next_project
+        @project = Project.next_project
+    end
+
     def show  
         @project = Project.find(params[:id])
         @role = Role.find_by(id: params[:id])
@@ -23,7 +28,7 @@ class ProjectsController < ApplicationController
 
     def create 
         @project = current_user.created_projects.build(project_params) 
-        if @project.save!
+        if @project.save
             flash[:msg] = "Project created!"
             redirect_to project_path(@project)
         else
