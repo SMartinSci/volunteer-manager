@@ -1,7 +1,8 @@
 <h1>All Tasks</h1>
 <% @tasks.each do |task| %>
-    <h3>Associated Role: <%= link_to task.role.name, role_path(task.role) %></h3>
-    <h3>Posted by: <%= link_to task.role.user.name, role_path(task.role) %></h3>
+    <h3>Task: <%= task.description %></h3>
+    <h4>Associated Role: <%= link_to task.role.name, role_path(task.role) %></h4>
+    <h4>Posted by: <%= link_to task.role.user.name, role_path(task.role) %></h4>
 <% end %>
 
 <%# <%= link_to "Edit task", edit_task_path(@task), class: "edit-link" %> 
