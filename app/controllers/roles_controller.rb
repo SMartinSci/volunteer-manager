@@ -4,10 +4,12 @@ class RolesController < ApplicationController
     before_action :set_role, only: [:show, :index, :update, :destroy]
 
     def index
-        @roles = Role.all
+            @project = Project.find_by(id: params[:project_id])
+            @roles = Role.all
     end
 
     def show
+
     end
 
     def new

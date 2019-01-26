@@ -3,7 +3,9 @@ class ProjectsController < ApplicationController
     before_action :set_project, only: [:show, :create, :new, :edit, :update, :destroy]
     
     def index 
-        @projects = Project.all 
+        @projects = Project.all
+        # Project.find(params[:id]) 
+        # @roles = @project.roles
     end 
 
     def this_year

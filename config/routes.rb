@@ -14,22 +14,18 @@ Rails.application.routes.draw do
   get 'projects/next_project' => 'projects#next_project'
 
 
-    resources :roles, :shallow => true do
-      resources :tasks
+    resources :roles, only: [:show, :index, :new, :create, :update, :destroy], :shallow => true do
+      resources :tasks, only: [:show, :index, :new, :create, :update, :destroy]
     end
 
-    resources :projects, :shallow => true do
+    resources :projects, only: [:show, :new, :index, :create, :edit, :update, :destroy], :shallow => true do
       resources :roles 
     end
 
-    resources :users, :shallow => true do
+    resources :users, only: [:show, :new, :create], :shallow => true do
       resources :roles 
     end
-
-  resources :roles, only: [:show, :new, :create, :update, :destroy]
-  resources :projects, only: [:show, :new, :create, :edit, :update, :destroy]
-  resources :tasks, only: [:show, :new, :create, :update, :destroy]
-  resources :users, only: [:show, :new, :create]
+ 
   
     get '/signup' => 'users#new'
     post '/signup' => 'users#create'
