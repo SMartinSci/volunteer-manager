@@ -1,7 +1,7 @@
-#Roles for the next project
-
-<%= link_to @project.name, project_path(@project), class:'name' %>
-   
-<% @project.roles.each do |role| %>
+<h2>Roles for the next project</h2>
+<br>
+<h4>Project: <%= link_to @project.name, project_path(@project), class:'name' %></h4>
+   <br>
+<h4> Role: <% @project.roles.each do |role| %></h4> 
 <%= link_to role.name, role_path(role)%>
 <% end %>

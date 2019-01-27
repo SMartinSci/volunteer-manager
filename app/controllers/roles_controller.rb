@@ -4,12 +4,15 @@ class RolesController < ApplicationController
     before_action :set_role, only: [:show, :index, :update, :destroy]
 
     def index
-            @project = Project.find_by(id: params[:project_id])
+        if params[:user_id]
+            @roles = User.find(params[:user_id]).roles
+        else
             @roles = Role.all
+        end
     end
 
     def show
-
+        @role = Role.find(params[:id])
     end
 
     def new
@@ -40,7 +43,7 @@ class RolesController < ApplicationController
     def destroy
         @role.destroy
         flash[:msg] = "Role deleted!"
-        redirect_to roles_path
+        redirect_to user_roles_path(current_user)
     end
 
     private

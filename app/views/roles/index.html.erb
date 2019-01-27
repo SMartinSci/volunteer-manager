@@ -1,12 +1,12 @@
-<h1>All of your Roles</h1>
-
-<% @roles.each do |role| %>
-    <h2>Role: <%= link_to role.name, project_roles_path(role), class:'name' %></h2>
-    <p>Posted by: <%= link_to role.user.name, user_path(role.user) %> </p>
-
-    <%= link_to "Add Role", new_project_role_path(role) %> 
-    <%= link_to "Delete Role", role_path(role), method: :delete %>  
+<h1>Your Roles</h1>
+    <% @roles.each do |role| %>
+        <h2>Role: <%= role.name %></h2>
+        <p>Posted by: <%= role.user.name %> </p>
 <% end %>
+
+
+
+
 
 
 
