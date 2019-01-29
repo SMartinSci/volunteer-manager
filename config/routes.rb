@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
 
     resources :roles, only: [:show, :index, :new, :create, :update, :destroy], :shallow => true do
-      resources :tasks, only: [:show, :index, :new, :create, :update, :destroy]
+      resources :tasks
     end
 
     resources :projects, only: [:show, :new, :index, :create, :edit, :update, :destroy], :shallow => true do
@@ -26,7 +26,8 @@ Rails.application.routes.draw do
       resources :roles 
     end
  
-  
+   resources :tasks, only: [:show, :index, :new, :create, :update, :destroy]
+
     get '/signup' => 'users#new'
     post '/signup' => 'users#create'
     get '/login' => 'sessions#new'

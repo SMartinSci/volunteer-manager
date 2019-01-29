@@ -1,2 +1,22 @@
 <h1>Add a new task</h1>
-<%= render 'form' %>
+
+<%= form_for (@task) do |f| %>
+    <div class="field">
+        <%= f.label :description %><br>
+        <%= f.text_field :description %>
+    </div>
+
+<%= f.hidden_field :role_id, :value => params[:role_id]%>
+      <%= f.submit "Submit", class:"submit" %>
+<% end %>
+
+<% if @task.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+        <p> Error: </p>
+        <ul>
+            <% @task.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>

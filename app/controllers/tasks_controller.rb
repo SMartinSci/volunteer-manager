@@ -1,34 +1,40 @@
 class TasksController < ApplicationController
-    before_action :set_task, only: [:show, :edit, :update, :destroy]
     before_action :logged_in?, only: [:index, :update, :destroy]
+    before_action :set_task, only: [:show, :index, :update, :destroy]
+
 
     def index
-      @tasks = Task.all
+      if params[:role_id]
+        @tasks = Role.find(params[:role_id]).tasks
+      else
+        @tasks = Task.all
+      end
     end
-  
+    
+    def show    
+      @task = Task.find(params[:id])
+    end
+
     def new
       @task = Task.new
     end
-  
-    def show    
-    end
-  
+    
     def create
-      @role = Role.find(params[:task][:role_id])  
+      @role = Role.find(params[:task][:role_id])
       @task = @role.tasks.build(task_params)
       if @task.save
         flash[:msg] = "Task created!"
-        redirect_to task_path(@task.id)
+        redirect_to task_path(@task)
       else
         render :new
       end
     end
 
     def update
-      @task.update(task_params)
-      if @task.save
-        flash[:msg] = "Task updated!"
-        redirect_to task_path(@task)
+      @task = Task.find(params[:id])
+      if @task.update(task_params)
+       flash[:msg] = "Task updated."
+          redirect_to task_path(@task)
       else
         render :edit
       end
@@ -43,7 +49,7 @@ class TasksController < ApplicationController
     private
   
     def set_task
-      @task = Task.find_by_id(params[:id])
+      @task = Task.find_by(id: params[:id])
     end
   
     def task_params
