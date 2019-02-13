@@ -12,7 +12,7 @@ To run your own local development server, run:
 
     $ rails s
     
-If using Facebook Omniauth, run 
+If using Facebook Omniauth, run: 
     $ thin start -ssl 
     
 to launch website.
