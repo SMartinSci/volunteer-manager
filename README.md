@@ -26,4 +26,4 @@ Contributions are welcome via pull requests and issues. This project is intended
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The app is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
