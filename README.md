@@ -11,6 +11,13 @@ Use Ruby 2.3.3 and Rails 5.2.2. To begin developing with Volunteer Manager, fork
 To run your own local development server, run:
 
     $ rails s
+    
+If using Facebook Omniauth, run 
+    $ thin start -ssl 
+    
+to launch website.
+    
+Go to http://localserver:3000 to start navigating, if using Facebook Omniauth, go to https://localserver:3000
 
 ## Contributing
 
